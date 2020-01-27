@@ -61,6 +61,16 @@ Download the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/downlo
 
 Extract the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_2/fsc4j_0_0_2-eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz) to any location `X` on your computer and execute `X/eclipse/eclipse`.
 
+## FAQ
+
+### I'm not seeing any run-time checking behavior!
+
+Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Eclipse, open your run configuration and add `-ea` under *JVM arguments*.
+
+### When stepping through the run-time checks in the Eclipse debugger, all kinds of platform classes are shown
+
+Filter those out by enabling Step Filtering. Right-click on the offending stack frame in the Threads view and choose `Edit Step Filters...`. Enable `java.*`, `jdk.*`, `sun.*`.
+
 ## TODO
 - Exceptional postconditions (`@throws` tags)
 - Class invariants
