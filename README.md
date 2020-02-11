@@ -56,7 +56,7 @@ Extract the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/downloa
 ### MacOS
 
 1. Download the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_3/fsc4j_0_0_3-eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
-2. By default, the macOS GateKeeper blocks attempts to run programs downloaded from the Internet. To tell whether a file was downloaded from the Internet, GateKeeper checks the file's `com.apple.quarantine` attribute. To remove this attribute, open a Terminal and run
+2. By default, the macOS GateKeeper blocks attempts to run programs downloaded from the Internet. To tell whether a file was downloaded from the Internet, GateKeeper checks the file's `com.apple.quarantine` attribute. To remove this attribute, open Terminal (an application in the Utilities folder) and run
 
        sudo xattr -d com.apple.quarantine ~/Downloads/fsc4j_0_0_3-eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg
     
