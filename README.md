@@ -47,11 +47,13 @@ class Main {
 
 ## Installation instructions
 
-First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) (version 10 or newer) installed. Then, follow the instructions below.
+First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) (64-bit, version 10 or newer) installed. Then, follow the instructions below.
 
 ### Windows
 
 Extract the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_4/fsc4j_0_0_4-eclipse-java-2019-12-R-win32-x86_64.zip) to any location `X` on your computer and execute `X\eclipse\eclipse.exe`.
+
+Note: if you get a `Java was started but returned exit code=13` error message, this probably means you installed a 32-bit JDK. Uninstall the 32-bit JDK and install a 64-bit ("x64") JDK, or install a 64-bit JDK and [edit](https://www.eclipse.org/forums/index.php/t/198527/) `eclipse.ini` to point to the 64-bit JDK.
 
 ### MacOS
 
