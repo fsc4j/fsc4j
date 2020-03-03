@@ -43,7 +43,7 @@ if (((cat bundles.info) -match '^org\.eclipse\.jdt\.core,') -eq $jdtCoreLine -an
   (cat $bundlesInfoCopyName) `
       -replace '^org\.eclipse\.jdt\.core,.*$', $jdtCoreLine `
       -replace '^org\.eclipse\.jdt\.debug,.$', $jdtDebugLine `
-      > bundles.info
+      | out-file bundles.info -encoding ascii
   echo "Done."
 }
 
