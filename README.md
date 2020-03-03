@@ -57,18 +57,13 @@ Note: if you get a `Java was started but returned exit code=13` error message, t
 
 ### MacOS
 
-1. Download the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_5/fsc4j_0_0_5-eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
-2. By default, the macOS GateKeeper blocks attempts to run programs downloaded from the Internet. To tell whether a file was downloaded from the Internet, GateKeeper checks the file's `com.apple.quarantine` attribute. To install FSC4J, you have to remove the quarantine attribute from the `.dmg` file, as follows:
-    1. Make sure the `.dmg` file is not mounted. If you see an `Eclipse` volume on your desktop, eject it.
-    2. Open Terminal (an application in the Utilities folder) and run
+If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, simply open a Terminal (which you can find in Applications -> Utilities) and run the following command:
 
-           sudo xattr -d com.apple.quarantine ~/Downloads/fsc4j_0_0_5-eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg
-    
-    If you do not remove the quarantine attribute, Step 5 below will fail.
-3. Open the downloaded file.
-4. Drag the Eclipse icon to the Applications folder.
-5. Open the Applications folder and double-click the Eclipse icon.
-    - If you get an error message saying something like `"Eclipse" is damaged and can't be opened. You should move it to the Bin.`, this is the GateKeeper issue mentioned in Step 2. Remove the "damaged" Eclipse application from your Applications folder, eject the Eclipse volume, and remove the quarantine attribute from the `.dmg` file. Then open the `.dmg` file again and drag the Eclipse icon to the Applications folder.
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.sh)"
+
+This will run a script that installs the FSC4J 0.0.6 plugins into your existing Eclipse installation. If your Eclipse installation still has the `com.apple.quarantine` attribute, the script will prompt for your password so that it can remove the attribute.
+
+If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.dmg` package (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
 
 ### Linux
 
