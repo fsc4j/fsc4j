@@ -63,6 +63,11 @@ If you already have the Eclipse IDE for Java Developers version 2019-12 or an ea
 
 This will run a script that installs the FSC4J 0.0.6 plugins into your existing Eclipse installation. If your Eclipse installation still has the `com.apple.quarantine` attribute, the script will prompt for your password so that it can remove the attribute.
 
+Note: this procedure assumes that you installed Eclipse into the default location `/Applications/Eclipse.app`. If you installed it somewhere else, run the following commands:
+
+    curl -fsSLO https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.sh
+    zsh install-fsc4j_0_0_6-plugins.sh /path/to/your/Eclipse/installation
+
 If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.dmg` package (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
 
 ### Linux
