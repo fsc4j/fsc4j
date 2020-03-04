@@ -51,7 +51,13 @@ First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java
 
 ### Windows
 
-Extract the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_5/fsc4j_0_0_5-eclipse-java-2019-12-R-win32-x86_64.zip) to any location `X` on your computer and execute `X\eclipse\eclipse.exe`.
+If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, open the Eclipse home folder (this is the folder containing the `eclipse` application as well as subfolders called `configuration` and `plugins`, among other ones) in Windows Explorer and right-click inside the Windows Explorer window while holding down the Shift key. In the pop-up menu, choose _Open PowerShell window here_. Then, paste the following command into the PowerShell window:
+
+    iex ((new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.ps1'))
+
+This will run a script that installs the FSC4J 0.0.6 plugins into your existing Eclipse installation.
+
+If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and extract the [Eclipse IDE for Java Developers version 2019-12 `.zip` file (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-win32-x86_64.zip).
 
 Note: if you get a `Java was started but returned exit code=13` error message, this probably means you installed a 32-bit JDK. Uninstall the 32-bit JDK and install a 64-bit ("x64") JDK, or install a 64-bit JDK and [edit](https://www.eclipse.org/forums/index.php/t/198527/) `eclipse.ini` to point to the 64-bit JDK.
 
