@@ -53,9 +53,9 @@ First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java
 
 If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, open the Eclipse home folder (this is the folder containing the `eclipse` application as well as subfolders called `configuration` and `plugins`, among other ones) in Windows Explorer and right-click inside the Windows Explorer window while holding down the Shift key. In the pop-up menu, choose _Open PowerShell window here_. Then, paste the following command into the PowerShell window:
 
-    iex ((new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.ps1'))
+    iex ((new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.ps1'))
 
-This will run a script that installs the FSC4J 0.0.6 plugins into your existing Eclipse installation.
+This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation.
 
 If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and extract the [Eclipse IDE for Java Developers version 2019-12 `.zip` file (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-win32-x86_64.zip).
 
@@ -65,14 +65,14 @@ Note: if you get a `Java was started but returned exit code=13` error message, t
 
 If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, simply open a Terminal (which you can find in Applications -> Utilities) and run the following command:
 
-    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.sh)"
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.sh)"
 
-This will run a script that installs the FSC4J 0.0.6 plugins into your existing Eclipse installation. If your Eclipse installation still has the `com.apple.quarantine` attribute, the script will prompt for your password so that it can remove the attribute.
+This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation. If your Eclipse installation still has the `com.apple.quarantine` attribute, the script will prompt for your password so that it can remove the attribute.
 
 Note: this procedure assumes that you installed Eclipse into the default location `/Applications/Eclipse.app`. If you installed it somewhere else, run the following commands:
 
-    curl -fsSLO https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_0_0_6-plugins.sh
-    zsh install-fsc4j_0_0_6-plugins.sh /path/to/your/Eclipse/installation
+    curl -fsSLO https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.sh
+    zsh install-fsc4j_latest-plugins.sh /path/to/your/Eclipse/installation
 
 If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.dmg` package (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
 
