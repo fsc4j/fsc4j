@@ -2,6 +2,8 @@
 
 A modified Eclipse IDE that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors.
 
+The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It does not yet check these clauses at run time.
+
 ## Example
 
 ```java
@@ -97,7 +99,7 @@ Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Ecli
 Filter those out by enabling Step Filtering. Right-click on the offending stack frame in the Threads view and choose `Edit Step Filters...`. Enable `java.*`, `jdk.*`, `sun.*`.
 
 ## TODO
-- Exceptional postconditions (`@throws` tags)
-- Class invariants
+- Perform typechecking of `@creates` clauses
+- Perform run-time checking of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
 - Currently, specifications of abstract methods are type-checked but not checked at run time. Generate run-time checks at dynamically-bound call sites to check the statically resolved spec. Report violations of behavioral subtyping.
 - CodeAssist (autocompletion) inside Javadoc
