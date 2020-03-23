@@ -78,7 +78,13 @@ If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an
 
 ### Linux
 
-Extract the [FSC4J distribution](https://github.com/fsc4j/fsc4j/releases/download/0_0_5/fsc4j_0_0_5-eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz) to any location `X` on your computer and execute `X/eclipse/eclipse`.
+If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, simply open a Terminal, navigate to the home folder of your Eclipse installation (this is the folder containing subfolders called `configuration` and `plugins`, among other ones) and run the following command:
+
+    bash -c "$(wget -O - https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins-linux.sh)"
+
+This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation.
+
+If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.tar.gz` archive (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-09/R/eclipse-java-2019-09-R-linux-gtk-x86_64.tar.gz).
 
 ## FAQ
 
