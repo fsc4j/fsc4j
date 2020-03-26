@@ -53,7 +53,7 @@ First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java
 
 ### Windows
 
-If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, open the Eclipse home folder (this is the folder containing the `eclipse` application as well as subfolders called `configuration` and `plugins`, among other ones) in Windows Explorer and right-click inside the Windows Explorer window while holding down the Shift key. In the pop-up menu, choose _Open PowerShell window here_. Then, paste the following command into the PowerShell window:
+If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, open the Eclipse home folder (this is the folder containing the `eclipse` application as well as subfolders called `configuration` and `plugins`, among other ones) in Windows Explorer. Then, in the Windows Explorer window's _File_ menu, choose _Open Windows PowerShell_ -> _Open Windows PowerShell_. (Note: if you installed Eclipse in the _Program Files_ folder, choose _Open Windows PowerShell as administrator_.) Then, paste the following command into the PowerShell window:
 
     iex ((new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.ps1'))
 
