@@ -98,6 +98,10 @@ Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Ecli
 
 Filter those out by enabling Step Filtering. Right-click on the offending stack frame in the Threads view and choose `Edit Step Filters...`. Enable `java.*`, `jdk.*`, `sun.*`.
 
+### The installation instructions do not work for me
+
+They do work in the vast majority of cases. If they do not work for you, see the [manual installation instructions](manual_installation.md).
+
 ## TODO
 - Perform typechecking of `@creates` clauses
 - Perform run-time checking of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
