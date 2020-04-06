@@ -8,8 +8,8 @@ if (!((test-path "$eclipseHome/plugins") -and (test-path "$eclipseHome/configura
   exit 1
 }
 
-$productVersion = "0.1.2"
-$jdtCoreVersion = "0_1_2"
+$productVersion = "0.1.3"
+$jdtCoreVersion = "0_1_3"
 $jdtDebugVersion = "0_0_2"
 
 $productName = "FSC4J $productVersion"
@@ -49,6 +49,18 @@ if (((cat bundles.info) -match '^org\.eclipse\.jdt\.core,') -eq $jdtCoreLine -an
       -replace '^org\.eclipse\.jdt\.debug,.$', $jdtDebugLine `
       | out-file bundles.info -encoding ascii
   echo "Done."
+}
+
+cd ../..
+
+if ((get-content eclipse.ini -raw) -match "^-showlocation`r?`nFSC4J $productVersion`r?`n") {
+  echo "Skipping update of eclipse.ini; window title already set to show `"FSC4J $productVersion`"."
+} else {
+  echo "Updating eclipse.ini: setting Eclipse window title to show `"FSC4J $productVersion`"..."
+  if ((get-content eclipse.ini -raw) -match "^-showlocation`r?`nFSC4J") {
+    (get-content eclipse.ini | select -skip 2) | set-content eclipse.ini
+  }
+  ("-showlocation$([Environment]::NewLine)FSC4J $productVersion`r`n" + (get-content eclipse.ini -raw)) | set-content eclipse.ini 
 }
 
 popd
