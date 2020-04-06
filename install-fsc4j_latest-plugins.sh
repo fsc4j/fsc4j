@@ -16,8 +16,8 @@ if ! is_eclipse_dir "$ECLIPSEHOME"; then
   exit 1
 fi
 
-PRODUCT_VERSION="0.1.2"
-JDT_CORE_VERSION="0_1_2"
+PRODUCT_VERSION="0.1.3"
+JDT_CORE_VERSION="0_1_3"
 JDT_DEBUG_VERSION="0_0_2"
 
 PRODUCT="FSC4J $PRODUCT_VERSION"
@@ -37,7 +37,7 @@ download_if_not_exists() {
   fi
 }
 
-pushd $ECLIPSEHOME/Contents/Eclipse/plugins
+pushd -q $ECLIPSEHOME/Contents/Eclipse/plugins
 
 download_if_not_exists https://github.com/fsc4j/fsc4j/releases/download/$JDT_CORE_VERSION org.eclipse.jdt.core_3.21.0.fsc4j_$JDT_CORE_VERSION.jar
 download_if_not_exists https://github.com/fsc4j/fsc4j/releases/download/$JDT_DEBUG_VERSION org.eclipse.jdt.debug_3.14.0.fsc4j_$JDT_DEBUG_VERSION.jar
@@ -57,7 +57,27 @@ else
   echo "Done."
 fi
 
-cd ../../../../..
+cd ../..
+
+echo ""
+
+if [[ $(sed -n -e N -e '/^-showlocation\nFSC4J '$PRODUCT_VERSION'$/ {
+  c\
+    ok
+  q
+}' -e q eclipse.ini) = ok ]]; then
+  echo 'Skipping update of eclipse.ini; window title already set to show "FSC4J '$PRODUCT_VERSION'".'
+else
+  echo 'Updating eclipse.ini: setting the Eclipse window title to show "FSC4J '$PRODUCT_VERSION'"...'
+  # Remove existing -showlocation option, if any
+  sed -i '' -e N -e '2 { /^-showlocation\nFSC4J/ d; }' eclipse.ini
+  sed -i '' -e '1 i\
+    -showlocation\
+    FSC4J '$PRODUCT_VERSION'
+  ' eclipse.ini
+fi
+
+cd ../../..
 
 if xattr -p com.apple.quarantine Eclipse.app > /dev/null 2>&1; then
   echo ""
@@ -68,10 +88,10 @@ if xattr -p com.apple.quarantine Eclipse.app > /dev/null 2>&1; then
   eval $CMD
 else
   echo ""
-  echo "Skipped removal of com.apple.quarantine attribute; it has already been removed."
+  echo "Skipping removal of com.apple.quarantine attribute; it has already been removed."
 fi
 
-popd
+popd -q
 echo ""
 echo "$PRODUCT installed successfully"
 echo ""
