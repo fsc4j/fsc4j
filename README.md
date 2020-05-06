@@ -90,6 +90,10 @@ If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an
 
 ## FAQ
 
+### I get "var cannot be resolved to a type"
+
+This means that the _Compiler compliance level_ on the _Java Compiler_ page of your Eclipse project's Properties is set to a Java version older than version 10. Set it to version 10 or later. You may also need to install a recent JDK onto your machine and let Eclipse know about it via the _Java_ -> _Installed JREs_ page of the Eclipse Preferences (which you find in the Window menu on Windows, and in the Eclipse menu on macOS).
+
 ### I'm not seeing any run-time checking behavior!
 
 Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Eclipse, open your run configuration and add `-ea` under *JVM arguments*.
