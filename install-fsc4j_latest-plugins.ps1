@@ -8,8 +8,8 @@ if (!((test-path "$eclipseHome/plugins") -and (test-path "$eclipseHome/configura
   exit 1
 }
 
-$productVersion = "0.1.4"
-$jdtCoreVersion = "0_1_4"
+$productVersion = "0.2.1"
+$jdtCoreVersion = "0_2_1"
 $jdtDebugVersion = "0_0_2"
 
 $productName = "FSC4J $productVersion"
