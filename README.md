@@ -55,11 +55,21 @@ FSC4J is a modified version of the Java Development Tools component of [the Ecli
 
 Then, below *Uncategorized*, check *Eclipse Java Development Tools*. You can tell from the version number that this is an FSC4J version of this component. Then click *Next* and follow the on-screen instructions.
 
+After restarting Eclipse, the FSC4J functionality should be active. Enter the following code; notice that `argss` is underlined:
+```java
+class Fsc4jTest {
+    /** @pre | argss == null */
+    public static void main(String[] args) {
+    }
+}
+```
+Now, replace `argss` by `args` and run the program; you will get an `AssertionError`. (If you do not get an error, open the Run Configuration and add `-ea` to the VM arguments so that assertions are enabled.)
+
 ## FAQ
 
 ### I'm not seeing any run-time checking behavior!
 
-Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Eclipse, open your run configuration and add `-ea` under *JVM arguments*.
+Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Eclipse, open your run configuration and add `-ea` under *VM arguments*.
 
 ### When stepping through the run-time checks in the Eclipse debugger, all kinds of platform classes are shown
 
