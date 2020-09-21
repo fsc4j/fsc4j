@@ -1,8 +1,8 @@
 # Formal Specifications Checker for Java
 
-A modified Eclipse IDE that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors.
+A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/installer)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
 
-The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It does not yet check these clauses at run time.
+The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It does not yet check these clauses at run time.
 
 ## Example
 
@@ -49,50 +49,13 @@ class Main {
 
 ## Installation instructions
 
-First, make sure you have a recent [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) (64-bit, version 10 or newer) installed. Then, follow the instructions below.
+FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-09 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse 2020-09; then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
+- Name: `FSC4J`
+- Location: `https://dl.bintray.com/fsc4j/fsc4j`
 
-### Windows
-
-If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, open the Eclipse home folder (this is the folder containing the `eclipse` application as well as subfolders called `configuration` and `plugins`, among other ones) in Windows Explorer. Then, in the Windows Explorer window's _File_ menu, choose _Open Windows PowerShell_ -> _Open Windows PowerShell_. (Note: if you installed Eclipse in the _Program Files_ folder, choose _Open Windows PowerShell as administrator_.) Then, paste the following command into the PowerShell window:
-
-    iex ((new-object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.ps1'))
-
-This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation.
-
-If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and extract the [Eclipse IDE for Java Developers version 2019-12 `.zip` file (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-win32-x86_64.zip).
-
-Note: if you get a `Java was started but returned exit code=13` error message, this probably means you installed a 32-bit JDK. Uninstall the 32-bit JDK and install a 64-bit ("x64") JDK, or install a 64-bit JDK and [edit](https://www.eclipse.org/forums/index.php/t/198527/) `eclipse.ini` to point to the 64-bit JDK.
-
-### MacOS
-
-If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, simply open a Terminal (which you can find in Applications -> Utilities) and run the following command:
-
-    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.sh)"
-
-This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation. If your Eclipse installation still has the `com.apple.quarantine` attribute, the script will prompt for your password so that it can remove the attribute.
-
-Note: this procedure assumes that you installed Eclipse into the default location `/Applications/Eclipse.app`. If you installed it somewhere else, run the following commands:
-
-    curl -fsSLO https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins.sh
-    zsh install-fsc4j_latest-plugins.sh /path/to/your/Eclipse/installation
-
-If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.dmg` package (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-macosx-cocoa-x86_64.dmg).
-
-### Linux
-
-If you already have the Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J installed, simply open a Terminal, navigate to the home folder of your Eclipse installation (this is the folder containing subfolders called `configuration` and `plugins`, among other ones) and run the following command:
-
-    bash -c "$(wget -O - https://raw.githubusercontent.com/fsc4j/fsc4j/master/install-fsc4j_latest-plugins-linux.sh)"
-
-This will run a script that installs the latest FSC4J plugins into your existing Eclipse installation.
-
-If you did not yet install Eclipse IDE for Java Developers version 2019-12 or an earlier version of FSC4J, first download and install the [Eclipse IDE for Java Developers version 2019-12 `.tar.gz` archive (_not_ the installer)](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-09/R/eclipse-java-2019-09-R-linux-gtk-x86_64.tar.gz).
+Then, below *Uncategorized*, check *Eclipse Java Development Tools*. You can tell from the version number that this is an FSC4J version of this component. Then click *Next* and follow the on-screen instructions.
 
 ## FAQ
-
-### I get "var cannot be resolved to a type"
-
-This means that the _Compiler compliance level_ on the _Java Compiler_ page of your Eclipse project's Properties is set to a Java version older than version 10. Set it to version 10 or later. You may also need to install a recent JDK onto your machine and let Eclipse know about it via the _Java_ -> _Installed JREs_ page of the Eclipse Preferences (which you find in the Window menu on Windows, and in the Eclipse menu on macOS).
 
 ### I'm not seeing any run-time checking behavior!
 
@@ -102,12 +65,9 @@ Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Ecli
 
 Filter those out by enabling Step Filtering. Right-click on the offending stack frame in the Threads view and choose `Edit Step Filters...`. Enable `java.*`, `jdk.*`, `sun.*`.
 
-### The installation instructions do not work for me
-
-They do work in the vast majority of cases. If they do not work for you, see the [manual installation instructions](manual_installation.md).
-
 ## TODO
 - Perform typechecking of `@creates` clauses
 - Perform run-time checking of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
-- Currently, specifications of abstract methods are type-checked but not checked at run time. Generate run-time checks at dynamically-bound call sites to check the statically resolved spec. Report violations of behavioral subtyping.
+- Perform more complete run-time checking of `@invar` clauses. (Currently, only the invariants of `this` are checked.)
+- Currently, specifications of abstract methods are not checked at compile time or at run time. Generate run-time checks at dynamically-bound call sites to check the statically resolved spec. Report violations of behavioral subtyping.
 - CodeAssist (autocompletion) inside Javadoc
