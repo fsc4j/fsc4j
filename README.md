@@ -77,7 +77,7 @@ Filter those out by enabling Step Filtering. Right-click on the offending stack 
 
 ## TODO
 - Perform typechecking of `@creates` clauses
-- Perform run-time checking of `@throws`, `@may_throw`, `@invar`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
+- Perform run-time checking of `@throws`, `@may_throw`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
 - Perform more complete run-time checking of `@invar` clauses. (Currently, only the invariants of `this` are checked.)
 - Currently, specifications of abstract methods are not checked at compile time or at run time. Generate run-time checks at dynamically-bound call sites to check the statically resolved spec. Report violations of behavioral subtyping.
 - CodeAssist (autocompletion) inside Javadoc
