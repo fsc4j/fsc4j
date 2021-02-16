@@ -49,7 +49,7 @@ class Main {
 
 ## Installation instructions
 
-FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-12 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse 2020-12; then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
+FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-12 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse IDE for Java Developers 2020-12; then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
 - Name: `FSC4J`
 - Location: `https://dl.bintray.com/fsc4j/fsc4j`
 
@@ -66,6 +66,10 @@ class Fsc4jTest {
 Now, replace `argss` by `args` and run the program; you will get an `AssertionError`. (If you do not get an error, open the Run Configuration and add `-ea` to the VM arguments so that assertions are enabled.)
 
 ## FAQ
+
+### When installing, I get a "Conflicting Dependency: Eclipse DSL Tools" error
+
+FSC4J conflicts with the Eclipse DSL Tools, which are included with the Eclipse IDE for Java and DSL Developers, but not with the Eclipse IDE for Java Developers. Solution: uninstall the Eclipse DSL Tools in About Eclipse -> Installation Details -> Installed Software -> Eclipse DSL Tools -> Uninstall (or install the Eclipse IDE for Java Developers).
 
 ### I'm not seeing any run-time checking behavior!
 
