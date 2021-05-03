@@ -51,7 +51,7 @@ class Main {
 
 FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-12 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse IDE for Java Developers 2020-12; then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
 - Name: `FSC4J`
-- Location: `https://dl.bintray.com/fsc4j/fsc4j`
+- Location: `https://people.cs.kuleuven.be/~bart.jacobs/fsc4j`
 
 Then, below *Uncategorized*, check *Eclipse Java Development Tools*. You can tell from the version number that this is an FSC4J version of this component. Then click *Next* and follow the on-screen instructions.
 
