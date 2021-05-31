@@ -49,7 +49,7 @@ class Main {
 
 ## Installation instructions
 
-FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-12 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse IDE for Java Developers 2020-12; then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
+FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2020-12 IDE](https://www.eclipse.org/downloads/packages/installer). First install Eclipse IDE for Java Developers 2020-12 (*FSC4J is not compatible with Eclipse 2012-03!*); then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
 - Name: `FSC4J`
 - Location: `https://people.cs.kuleuven.be/~bart.jacobs/fsc4j`
 
@@ -75,9 +75,15 @@ FSC4J conflicts with the Eclipse DSL Tools, which are included with the Eclipse 
 
 Make sure assertions are enabled. Specify `-ea` on the JVM command line. In Eclipse, open your run configuration and add `-ea` under *VM arguments*.
 
+Also check that FSC4J was installed successfully. In About Eclipse (in Eclipse's Help menu on Windows; in the Eclipse menu on macOS) -> Installation Details -> Installed Software, check that the version number of Eclipse Java Development Tools mentions `fsc4j`.
+
 ### When stepping through the run-time checks in the Eclipse debugger, all kinds of platform classes are shown
 
 Filter those out by enabling Step Filtering. Right-click on the offending stack frame in the Threads view and choose `Edit Step Filters...`. Enable `java.*`, `jdk.*`, `sun.*`.
+
+### When installing, I get "Updates are not permitted"
+
+Make sure your user account has write access to the folder where you installed Eclipse.
 
 ## TODO
 - Perform typechecking of `@creates` clauses
