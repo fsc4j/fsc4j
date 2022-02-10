@@ -1,6 +1,6 @@
 # Formal Specifications Checker for Java
 
-A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2021-09/r)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
+A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2021-12/r)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
 
 The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It does not yet check these clauses at run time.
 
@@ -49,7 +49,7 @@ class Main {
 
 ## Installation instructions
 
-FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2021-09 IDE](https://www.eclipse.org/downloads/packages/release/2021-09/r). First install Eclipse IDE for Java Developers 2021-09 (*FSC4J is not compatible with older or newer releases of Eclipse!*); then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
+FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2021-12 IDE](https://www.eclipse.org/downloads/packages/release/2021-12/r). First install Eclipse IDE for Java Developers 2021-12 (*FSC4J is not compatible with older or newer releases of Eclipse!*); then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
 - Name: `FSC4J`
 - Location: `https://people.cs.kuleuven.be/~bart.jacobs/fsc4j`
 
