@@ -17,3 +17,4 @@
 [submodule "jikespg"]
 	path = jikespg
 	url = git@github.com:noahknapen/jikespg.git
+	branch = fixes-combined
