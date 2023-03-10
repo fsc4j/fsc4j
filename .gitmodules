@@ -14,3 +14,6 @@
 	path = eclipse.platform.text
 	url = git@github.com:noahknapen/eclipse.platform.text.git
 	branch = fsc4j-completion
+[submodule "jikespg"]
+	path = jikespg
+	url = git@github.com:noahknapen/jikespg.git
