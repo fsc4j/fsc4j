@@ -13,3 +13,4 @@
 [submodule "eclipse.platform.text"]
 	path = eclipse.platform.text
 	url = git@github.com:noahknapen/eclipse.platform.text.git
+	branch = fsc4j-completion
