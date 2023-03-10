@@ -1,6 +1,6 @@
 [submodule "eclipse.jdt.core"]
 	path = eclipse.jdt.core
-	url = https://github.com/fsc4j/eclipse.jdt.core
+	url = git@github.com:noahknapen/eclipse.jdt.core.git
 	branch = fsc4j
 [submodule "eclipse.jdt.debug"]
 	path = eclipse.jdt.debug
