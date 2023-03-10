@@ -10,3 +10,6 @@
 	path = eclipse.jdt.ui
 	url = git@github.com:noahknapen/eclipse.jdt.ui.git
 	branch = fsc4j-completion
+[submodule "eclipse.platform.text"]
+	path = eclipse.platform.text
+	url = git@github.com:noahknapen/eclipse.platform.text.git
