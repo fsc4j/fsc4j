@@ -1,8 +1,8 @@
 # Formal Specifications Checker for Java
 
-A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2021-12/r)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
+A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2023-12/r)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
 
-The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It does not yet check these clauses at run time.
+The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It also evaluates `@throws` clauses and reports and error if an exception specified by a `@throws` clause whose condition holds is not thrown, but otherwise does not yet check these clauses at run time.
 
 ## Example
 
@@ -49,9 +49,9 @@ class Main {
 
 ## Installation instructions
 
-FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2021-12 IDE](https://www.eclipse.org/downloads/packages/release/2021-12/r). First install Eclipse IDE for Java Developers 2021-12 (*FSC4J is not compatible with older or newer releases of Eclipse!*); then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
+FSC4J is a modified version of the Java Development Tools component of [the Eclipse 2023-12 IDE](https://www.eclipse.org/downloads/packages/release/2023-12/r). First install Eclipse IDE for Java Developers 2023-12 (*FSC4J is not compatible with older or newer releases of Eclipse!*); then, in Eclipse's Help menu, choose *Install New Software...*. Then choose *Add...* to add the FSC4J software site:
 - Name: `FSC4J`
-- Location: `https://people.cs.kuleuven.be/~bart.jacobs/fsc4j`
+- Location: `https://people.cs.kuleuven.be/~bart.jacobs/fsc4j-2023-12`
 
 Then, below *Uncategorized*, check *Eclipse Java Development Tools*. You can tell from the version number that this is an FSC4J version of this component. Then click *Next* and follow the on-screen instructions.
 
@@ -66,6 +66,10 @@ class Fsc4jTest {
 Now, replace `argss` by `args` and run the program; you will get an `AssertionError`. (If you do not get an error, open the Run Configuration and add `-ea` to the VM arguments so that assertions are enabled.)
 
 ## FAQ
+
+### I am getting orange underlines all over my formal specifications!
+
+This is the Eclipse spell checker. Disable it by hovering over an underlined word and choosing *Disable spell checking* from the menu that appears.
 
 ### When installing, I get a "Conflicting Dependency: Eclipse DSL Tools" error
 
@@ -87,6 +91,7 @@ Make sure your user account has write access to the folder where you installed E
 
 ## TODO
 - Perform typechecking of `@creates` clauses
-- Perform run-time checking of `@throws`, `@may_throw`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
+- When a method or constructor throws an exception, checks that there is a `@throws` or `@may_throw` clause that permits this
+- Perform run-time checking of `@may_throw`, `@inspects`, `@mutates`, `@mutates_properties`, and `@creates` clauses
 - Perform more complete run-time checking of `@invar` clauses. (Currently, only the invariants of `this` are checked.)
 - CodeAssist (autocompletion) inside Javadoc
