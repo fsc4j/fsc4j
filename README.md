@@ -55,7 +55,7 @@ FSC4J is a modified version of the Java Development Tools component of [the Ecli
 
 Then, below *FSC4J*, check *Eclipse Java Development Tools*. You can tell from the version number that this is an FSC4J version of this component. Then click *Next* and follow the on-screen instructions.
 
-After restarting Eclipse, the FSC4J functionality should be active. Enter the following code; notice that `argss` is underlined:
+After restarting Eclipse, the FSC4J functionality should be active. Enter the following code (File -> New -> Java Project -> Enter name `fsc4jtest` -> Finish -> in the Package explorer (Window -> Show View -> Package Explorer), right-click the project and choose New -> Class. Enter name `Fsc4jTest` and click Finish. Replace the code in the editor (except for the `package` declaration, if any) by the code below); notice that `argss` is underlined:
 ```java
 class Fsc4jTest {
     /** @pre | argss == null */
@@ -70,6 +70,10 @@ Now, replace `argss` by `args` and run the program; you will get an `AssertionEr
 Stepping through your program and inspecting the values of variables at each step using Eclipse's debugging functionality is an important technique for diagnosing crashes and other incorrect program behavior. Unfortunately, the code added to your program by FSC4J degrades the debugging experience. Therefore, we recommend that before starting a debugging session, you temporarily disable FSC4J by appending `_nofsc4j` to your package name using Eclipse's refactoring support. (Right-click on the package in the Package Explorer and choose *Refactor* -> *Rename*.) For example, if your project is in a package called `foo`, rename the package to `foo_nofsc4j`. FSC4J will ignore all FSC4J tags in files starting with a package declaration that contains `nofsc4j`. As a result, it will not add any code to your program and will not impact the debugging experience. After you are done debugging, restore your original package name so that you will again benefit from FSC4J's syntax checks, type checks, visibility checks, and run-time checks.
 
 ## FAQ
+
+### How can I tell if the plugin is installed properly?
+
+In Eclipse's About dialog (on Windows: Help -> About Eclipse; on Mac: Eclipse menu -> About Eclipse), choose Installation details. On the Installed Software tab, check the version number of Eclipse Java Development Tools; it should contains `fsc4j`. If not, installation of FSC4J was not successful.
 
 ### I am getting orange underlines all over my formal specifications!
 
