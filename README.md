@@ -73,7 +73,7 @@ Stepping through your program and inspecting the values of variables at each ste
 
 ### How can I tell if the plugin is installed properly?
 
-In Eclipse's About dialog (on Windows: Help -> About Eclipse; on Mac: Eclipse menu -> About Eclipse), choose Installation details. On the Installed Software tab, check the version number of Eclipse Java Development Tools; it should contains `fsc4j`. If not, installation of FSC4J was not successful.
+In Eclipse's About dialog (on Windows: Help -> About Eclipse; on Mac: Eclipse menu -> About Eclipse), choose Installation details. On the Installed Software tab, check the version number of Eclipse Java Development Tools; it should contain `fsc4j`. If not, installation of FSC4J was not successful.
 
 ### I am getting orange underlines all over my formal specifications!
 
