@@ -12,9 +12,9 @@ Which plugins are loaded when you start Eclipse is determined by the `bundles.in
 
 ### Step 1: download the latest FSC4J plugins into the `plugins` folder
 
-First, download the latest `org.eclipse.jdt.core` and `org.eclipse.jdt.core.compiler.batch` plugins from [here](https://github.com/fsc4j/fsc4j/releases) into the `plugins` subfolder of your Eclipse installation's home directory. (As of this writing, the latest version of the FSC4J `org.eclipse.jdt.debug` plugin is [version 0.8.4](https://github.com/fsc4j/fsc4j/releases/tag/0_8_4).)
+First, download the latest `org.eclipse.jdt.core` and `org.eclipse.jdt.core.compiler.batch` plugins from [here](https://github.com/fsc4j/fsc4j/releases) into the `plugins` subfolder of your Eclipse installation's home directory.
 
-*Note: if the procedure on this page does not work for you, try removing the original `org.eclipse.jdt.core` and `org.eclipse.jdt.core.compiler.batch` plugins from the `plugin` folder so that only the FSC4J versions of these plugins are present in this folder.*
+*Note: if the procedure on this page does not work for you, try removing the original `org.eclipse.jdt.core` and `org.eclipse.jdt.core.compiler.batch` plugins from the `plugins` folder so that only the FSC4J versions of these plugins are present in this folder.*
 
 ### Step 2: update `bundles.info` to point to these plugins
 
@@ -24,13 +24,13 @@ Open the `bundles.info` file in the `org.eclipse.equinox.simpleconfigurator` sub
 
       org.eclipse.jdt.core,A.B.0.vfsc4j_X_Y_Z,plugins/org.eclipse.jdt.core_A.B.0.vfsc4j_X_Y_Z.jar,4,false
 
-  where `A.B` and `X_Y_Z` are the version number of the FSC4J `org.eclipse.jdt.core` plugin you downloaded.
+  where you should replace `A.B` and `X_Y_Z` with the version number of the FSC4J `org.eclipse.jdt.core` plugin you downloaded.
 
 - Find the line starting with `org.eclipse.jdt.core.compiler.batch,` and replace it with
 
       org.eclipse.jdt.core.compiler.batch,A.B.0.vfsc4j_X_Y_Z,plugins/org.eclipse.jdt.core.compiler.batch_A.B.0.vfsc4j_X_Y_Z.jar,4,false
 
-  where `A.B` and `X_Y_Z` are the version number of the FSC4J `org.eclipse.jdt.core.compiler.batch` plugin you downloaded.
+  where you should replace `A.B` and `X_Y_Z` with the version number of the FSC4J `org.eclipse.jdt.core.compiler.batch` plugin you downloaded.
 
 ### Step 3 (macOS only): remove the quarantine attribute
 
