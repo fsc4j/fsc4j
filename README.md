@@ -2,7 +2,7 @@
 
 A modified version of [the Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2023-12/r)'s Java Development Tools component that performs syntax checking, typechecking, and run-time checking of preconditions and postconditions specified as part of the `@pre` and `@post` tags in the Javadoc comments for methods and constructors, and class invariants specified as part of the `@invar` tags in the Javadoc comments for classes and fields. (Note: run-time checking of class invariants is currently incomplete; currently, only the invariants of `this` are checked.)
 
-The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It also evaluates `@throws` clauses and reports and error if an exception specified by a `@throws` clause whose condition holds is not thrown, but otherwise does not yet check these clauses at run time.
+The current version also checks grammatical well-formedness and well-typedness of the formal parts of `@throws`, `@may_throw`, `@inspects`, `@mutates`, and `@mutates_properties` clauses, and grammatical well-formedness of the formal parts of `@creates` clauses. It also evaluates `@throws` clauses and reports an error if an exception specified by a `@throws` clause whose condition holds is not thrown, but otherwise does not yet check these clauses at run time.
 
 ## Example
 
